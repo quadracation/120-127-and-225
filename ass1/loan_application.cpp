@@ -6,18 +6,20 @@
 
 using namespace std;
 
-application::application(): std::string name[], int edu[], int exp[], int amount[], int earning[];
+application::application(){
+	application::name= new string();
+	application::educ= new int();
+	application::expe= new int();
+	application::amount= new int();
+}
 
 application::~application(){
 }
 
-application::save_application(std::string applicant_full_name, int years_of_relevant_education, 
+application::save_application(string applicant_full_name, int years_of_relevant_education, 
 		int years_of_relevant_experience, int loan_amount, int* estimated_yearly_profits,int tracker){
 
-	name[tracker]=applicant_full_name;
-	edu[tracker]=years_of_relevant_education;
-	exp[tracker]=years_of_relevant_experience;
-	amount[tracker]=loan_amount;
+	
 
 
 }
