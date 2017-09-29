@@ -17,6 +17,7 @@ application::application(){
 	application::d_amount = new int();
 	application::a_name = new string();
 	application::a_amount = new int();
+	application::tracker=0;
 
 }
 
@@ -26,23 +27,16 @@ application::~application(){
 void application::save_application(string applicant_full_name, int years_of_relevant_education, 
 		int years_of_relevant_experience, int loan_amount, int* estimated_yearly_profits[30], int app_num){
 	int num = 0;
-	for (int i =0; i<5000; i++)
-		if (&name[i] == 0)
-			name[i]= applicant_full_name;
-	for (int i =0; i<5000; i++)
-		if (&educ[i] == 0)
-			educ[i]= years_of_relevant_education;	
-	for (int i =0; i<5000; i++)
-		if (&expe[i] == 0)
-			expe[i]= years_of_relevant_experience;
-	for (int i =0; i<5000; i++)
-		if (&amount[i] == 0)
-			amount[i]= loan_amount;
+	name[tracker]= applicant_full_name;
+	educ[tracker]= years_of_relevant_education;
+	expe[tracker]= years_of_relevant_experience;
+	amount[tracker]= loan_amount;
 	for (int i =0; i<30; i++ )
 		if(estimated_yearly_profits[i] != 0)
 			num = num + ((1/(i+1)) * *estimated_yearly_profits[i]);
 	priority[app_num] = num;
 	s_priority[app_num] = num;
+	tracker++;
 
 
 
@@ -78,4 +72,12 @@ void application::make_decision(string decision_date, int budget)
 
 
 
+}
+
+void application::print(){
+	int i=0;
+	while(&a_name[i] and &a_amount[i]!=NULL){
+		cout<<"approved"<<a_name[i]<<endl;
+		i++;
+	}
 }

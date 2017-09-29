@@ -21,6 +21,7 @@ class application{
 	std::string* a_name;
 	int* d_amount;
 	int* a_amount;
+	int tracker;
 
 	
 public:
