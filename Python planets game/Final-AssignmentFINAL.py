@@ -1,4 +1,4 @@
-###CMPT120 Final Assignment
+###Matrix based python game
 ###Ben,Brian,Nichol
 
     
@@ -26,14 +26,14 @@ def read_string_list_from_file(the_file):
            
 
 ###Player Info
-'''
+
 pchoice = input(" Which position shall PythonPlanet be (0..7):")
 print ("Data for Player:")
 name = input("Name?:")
 clevel = input ("Civilization level (0..5):")
 ifuel = input("Initial Fuel Litres (0..50):")
 maxturns = input("Maximum Turns This Game? (1..10):")
-'''     
+
 
 ####Dice
 
